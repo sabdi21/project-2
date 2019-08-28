@@ -1,0 +1,20 @@
+<h1>This is the result page!</h1>
+
+<% bookInfo.forEach(book => {  %>
+
+<div id="bookDiv" >
+    <form method="POST" action="/favorites">
+        <img src="<%= book.image_url %>">
+        <p>Title: <%= book.title %></p>
+        <p>Author(s): <%= book.author %></p>
+        <p>ISBN: <%= book.isbn %></p>
+        <p>Summary: <%= book.description %></p>
+        <p><a href="<%=book.preview%>">Preview Book Here!</a></p>
+        <form method="POST" action="/faves">
+            <input hidden type="text" name="name" value="<%= book.name %>">
+            <button type="submit">Pin it!</button>
+        </form>
+</div>
+
+<% }) %>
+

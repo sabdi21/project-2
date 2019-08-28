@@ -1,0 +1,105 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    margin: 0;
+    display: inline;
+    padding-left: 0px;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px 5px;
+}
+
+nav ul li a {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: chartreuse;
+}
+
+form {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 30vh;
+    width: 50vw;
+    margin: 0 auto;
+    border: 1px solid grey;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 25px;
+    padding: 2%;
+    background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
+    /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
+}
+
+.credentials-form input {
+    max-width: 100%;
+    margin: 10px 0px;
+    padding: 1%;
+}
+
+.credentials-form input[type=submit] {
+    padding: 40px;
+    font-size: 40px;
+}
+
+.error-box {
+  background-color: pink;
+  color: red;
+  font-weight: bold;
+  padding: 30px 50px;
+}
+
+.success-box {
+  background-color: rgb(59, 231, 137);
+  color: rgb(5, 56, 4);
+  font-weight: bold;
+  padding: 30px 50px;
+}
+
+.container {
+  margin: 0 15%;
+  padding-top: 20px;
+  background-color: lavender;
+  height: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: rgb(228, 18, 200);
+}
+
+.admin {
+  background-color: aquamarine;
+}
+.close-button {
+  float: right;
+  background-color: rgb(143, 137, 137);
+  cursor: pointer;
+}
+footer {
+  background-color: rebeccapurple;
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

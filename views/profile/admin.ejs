@@ -1,0 +1,17 @@
+
+<div class="admin">
+<h1>Admin: <%= currentUser.firstname%> <%= currentUser.lastname %></h1>
+</div>
+<div class="left">
+    <div class='profile-image'>
+        
+        <img src='<%=currentUser.profile%>' alt=" <%currentUser.name %>">
+        <h2 <%= currentUser.firstname%> <%= currentUser.lastname %></h2>
+        <h2>Birthdate: <%= moment.utc(currentUser.birthday).format('MMMM Do YYYY')%> </h2> 
+        <h3>Bio: <%=currentUser.bio %></h3>
+       
+    </div>
+    <div>
+        <h3><strong>Admin?</strong> <%= currentUser.admin ? 'Yes' : 'No' %></h3>
+    </div>
+</div>

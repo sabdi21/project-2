@@ -1,0 +1,33 @@
+<% if(alerts && alerts.error) { %>
+    <div class="error-box closeable-box">
+        <button class="close-button" id="close-error">X</button>
+        <h2>Error: </h2>
+        <% alerts.error.forEach(msg => { %>
+        <p><%= msg %></p>
+            
+            <% }) %>
+    </div>
+<% } %>
+
+<% if(alerts && alerts.success) { %>
+    <div class="success-box closeable-box">
+            <button class="close-button" id="close-success"> X </button>
+        <h2>Success: </h2>
+        <% alerts.success.forEach(msg => { %>
+        <p><%= msg %></p>
+            
+            <% }) %>
+    </div>
+<% } %>
+
+<script>
+
+[...document.getElementsByClassName('close-button')].forEach(element => {
+    element.addEventListener('click', function() {
+       [...document.getElementsByClassName('closeable-box')].forEach(box => {
+           box.style.display = 'none';
+       });
+    })
+});
+
+</script>
