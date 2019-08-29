@@ -1,1 +1,23 @@
-<h1>This is the favorites page</h1>
+<h1>This is the favorites page!</h1>
+
+<% favorites.forEach(fav => {  %>
+
+<div id="bookDiv" >
+    <form method="POST" action="/book/favorites/<%=fav.id%>/?_method=DELETE">
+
+        <span id="image">
+            <img src="<%= fav.image_url %>">
+            <h4>Title: <%= fav.title %></h4>
+            <h4>Author(s): <%= fav.author %></h4>
+            <h4>ISBN: <%= fav.isbn %></h4>
+        </span>
+        <p id="description">Book Description: </p>
+        <p><%= fav.description %>...</p>
+        <p id="preview-link"><a href="<%=fav.preview_link%>"">Preview Book Here!</a></p>
+
+        <button class="btn-warning" type="submit">Remove Book</button>
+    </form>
+    
+</div>
+
+<% }) %>

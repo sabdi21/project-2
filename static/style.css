@@ -2,11 +2,12 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+
 }
 
 nav {
     background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
-    font-size: 32px;
+    font-size: 25px;
     display: flex;
     justify-content: space-between;
 }
@@ -31,19 +32,42 @@ nav ul li a {
 nav a:hover {
     color: chartreuse;
 }
+#bookDiv {
+  padding-bottom: 20px;
+}
+img {
+  height: 230px;
+  width: 170px;
+  float: left;
+}
+
+span h4 {
+  padding-left: 200px; 
+}
+#description {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0%;
+}
+.btn-warning {
+  padding: 10px;
+  width: fit-content;
+}
 
 form {
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    min-height: 30vh;
-    width: 50vw;
-    margin: 0 auto;
-    border: 1px solid grey;
-    box-shadow: 10px 5px 5px black;
-    border-radius: 25px;
-    padding: 2%;
-    background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
+  display: flex;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  width: 50vw;
+  margin: 0 auto;
+  border: 1px solid grey;
+  box-shadow: 10px 5px 5px rgb(229, 147, 218);
+  border-radius: 25px;
+  padding: 2%;
+  background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
     /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
 }
 
@@ -94,7 +118,7 @@ h1 {
   cursor: pointer;
 }
 footer {
-  background-color: rebeccapurple;
+  background-color: rgb(211, 194, 228);
   font-size: 20px;
   color: white;
   padding: 10px;

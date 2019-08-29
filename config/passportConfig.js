@@ -28,15 +28,15 @@ passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
 }, (typedInEmail, typedInPassword, callback) => {
-    console.log('1', typedInEmail, typedInPassword)
+    // console.log('1', typedInEmail, typedInPassword)
     // we are going to use the data information then
     //tries looking up the user by the email
     db.user.findOne({
         where: { email: typedInEmail }
     })
     .then(foundUser => {
-        console.log("got a user")
-        console.log(foundUser, 'this is the user')
+        //console.log("got a user")
+        //console.log(foundUser, 'this is the user')
         //if i did not find a user with that email -OR- 
         //If i did find the user but they dont have the correct password
         if(!foundUser || !foundUser.validPassword(typedInPassword)) {

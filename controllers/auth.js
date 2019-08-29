@@ -9,7 +9,7 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/signup', (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     if(req.body.password !== req.body.password_verify) {
         req.flash('error', 'Passwords do not match!');
         res.redirect('/auth/signup');
@@ -22,13 +22,13 @@ router.post('/signup', (req, res, next) => {
         })
         .spread((user, wasCreated) => {
             if(wasCreated) {
-                // this was legit a new user
-                    passport.authenticate('local', {
-                    successRedirect: '/profile',
-                    successFlash: 'Successful sign up. Welcome',
-                    failureRedirect: '/auth/login',
-                    failureFlash: 'This should never happen. Contact your administrator'
-                })(req, res, next);
+            // this was legit a new user
+                passport.authenticate('local', {
+                successRedirect: '/profile',
+                successFlash: 'Successful sign up. Welcome',
+                failureRedirect: '/auth/login',
+                failureFlash: 'This should never happen. Contact your administrator'
+            })(req, res, next);
             }
             else {
                 // the user was found, don't let them create a new account. Make them log in
@@ -38,7 +38,7 @@ router.post('/signup', (req, res, next) => {
         })
         .catch(err => {
             //print all the error info to the console
-            console.log('Error in POST /auth/signup', err);
+            // console.log('Error in POST /auth/signup', err);
 
             //generic error for the flash message
             req.flash('error', 'something went awry!  ')

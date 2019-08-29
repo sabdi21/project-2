@@ -72,5 +72,5 @@ app.get('/*', (req, res) => {
     res.render('404')
 })
 app.listen(process.env.PORT, () => {
-    console.log('server is now running on 2001 🐣')
+    console.log('server is now running on 7000 🐣')
 });

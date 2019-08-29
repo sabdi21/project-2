@@ -3,17 +3,28 @@
 <% bookInfo.forEach(book => {  %>
 
 <div id="bookDiv" >
-    <form method="POST" action="/favorites">
+    <form method="POST" action="/book/favorites">
+        
         <img src="<%= book.image_url %>">
+        <input hidden type="text" name="image_url" value="<%= book.image_url %>">
+        
         <p>Title: <%= book.title %></p>
+        <input hidden type="text" name="title" value="<%= book.title %>">
+        
         <p>Author(s): <%= book.author %></p>
+        <input hidden type="text" name="author" value="<%= book.author %>">
+        
         <p>ISBN: <%= book.isbn %></p>
-        <p>Summary: <%= book.description %></p>
+        <input hidden type="text" name="isbn" value="<%= book.isbn %>">
+        
+        <p>Book Description: <%= book.description %>...</p>
+        <input hidden type="text" name="description" value="<%= book.description %>">
+        
         <p><a href="<%=book.preview%>">Preview Book Here!</a></p>
-        <form method="POST" action="/faves">
-            <input hidden type="text" name="name" value="<%= book.name %>">
-            <button type="submit">Pin it!</button>
-        </form>
+        <input hidden type="text" name="preview" value="<%= book.preview %>">
+    
+        <button class=".btn-success" type="submit">Pin it!</button>
+    </form>
 </div>
 
 <% }) %>
