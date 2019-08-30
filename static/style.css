@@ -4,10 +4,17 @@ html, body {
     font-family: 'Roboto', sans-serif;
 
 }
+.profile-container {
+  display: flex;
+  padding: 20px;
+}
 
+#title {
+  text-align: center;
+}
 nav {
     background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -67,7 +74,8 @@ form {
   box-shadow: 10px 5px 5px rgb(229, 147, 218);
   border-radius: 25px;
   padding: 2%;
-  background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
+  margin-bottom: 2%;
+  background-image: repeating-linear-gradient(to bottom right, rgb(236, 214, 231), rgb(247, 66, 210), rgb(219, 168, 208));
     /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
 }
 
@@ -126,4 +134,5 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+ 
 }

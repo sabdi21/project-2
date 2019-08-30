@@ -1,15 +1,17 @@
 <h1> </h1>
 <h1>Profile Page of <%= currentUser.firstname%> <%= currentUser.lastname %></h1>
-<div>
-    <div class='profile-image'>
-        
-        <img src='<%=currentUser.profile%>' alt=" <%currentUser.name %>">
-        <h2 <%= currentUser.firstname%> <%= currentUser.lastname %></h2>
-        <h2>Birthdate: <%= moment.utc(currentUser.birthday).format('MMMM Do YYYY')%> </h2> 
-        <h3>Bio: <%=currentUser.bio %></h3>
-       
+<div class="profile-container">
+            <div class='profile-image'>
+            <img src='<%=currentUser.profile%>' alt=" <%currentUser.name %>">
+            <h2 <%= currentUser.firstname%> <%= currentUser.lastname %></h2>
+            <h2>Username: <%=currentUser.username %></h2>
+            <h2>Birthdate: <%= moment.utc(currentUser.birthday).format('MMMM Do YYYY')%> </h2> 
+            <h3>Bio: <%=currentUser.bio %></h3>
+            <a href="/profile/edit">Edit Your Profile Here</a>
+
+            <div>
+                    <h3><strong>Admin?</strong> <%= currentUser.admin ? 'Yes' : 'No' %></h3>
+                </div>
     </div>
-    <div>
-        <h3><strong>Admin?</strong> <%= currentUser.admin ? 'Yes' : 'No' %></h3>
-    </div>
+
 </div>
