@@ -71,6 +71,6 @@ app.get('/', (req, res) => {
 app.get('/*', (req, res) => {
     res.render('404')
 })
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 7000, () => {
     console.log('server is now running on 7000 🐣')
 });
