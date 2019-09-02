@@ -3,6 +3,7 @@ const router = require('express').Router();
 const db = require('../models');
 const methodOverride = require('method-override');
 const axios = require('axios');
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 router.use(methodOverride('_method'));
 
@@ -75,7 +76,7 @@ router.post("/favorites", (req, res) => {
     })
 })
 
-router.get("/favorites", (req, res) => {
+router.get("/favorites",  isLoggedIn, (req, res) => {
     console.log("this is the userId: ", req.user.id)
     db.book.findAll({
         where: { userId: req.user.id}

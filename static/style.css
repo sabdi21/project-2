@@ -6,14 +6,17 @@ html, body {
 }
 .profile-container {
   display: flex;
-  padding: 20px;
+  padding: 50px;
+  /* margin-right: 60px; */
 }
-
+.card-body {
+margin: 20px;
+}
 #title {
   text-align: center;
 }
 nav {
-    background-image: linear-gradient(to bottom right, rgb(236, 214, 231), rgb(255, 0, 200), rgb(235, 129, 212));
+    background-image: linear-gradient(to bottom right, rgb(196, 53, 188), rgb(241, 33, 241), rgb(236, 119, 240));
     font-size: 20px;
     display: flex;
     justify-content: space-between;
@@ -39,13 +42,28 @@ nav ul li a {
 nav a:hover {
     color: chartreuse;
 }
-#bookDiv {
-  padding-bottom: 20px;
+.bookDiv {
+  padding-bottom: 40px;
+  position: relative;
+  display: inline-flex; 
+  margin: auto 5px; 
+}
+.card {
+  margin: auto 5px; 
+}
+.container {
+  margin: 20%;
+}
+.profile-image {
+  width: 200px;
+  height: 200px;
 }
 img {
   height: 230px;
-  width: 170px;
   float: left;
+}
+.card mb-3 {
+
 }
 
 span h4 {
@@ -109,6 +127,7 @@ form {
   padding-top: 20px;
   background-color: lavender;
   height: 100%;
+  width: 70%;
 }
 
 h1 {
@@ -135,4 +154,39 @@ footer {
   width: 100%;
   text-align: center;
  
+}
+
+#joke-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#joke-display {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#joke-date {
+  font-size: 1.25rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+#joke-text,
+#joke-loading {
+  margin-top: 2rem;
+  font-size: 1.75rem;
+}
+
+.hidden {
+  display: none;
+}
+.joke {
+  font-size: 50px;
+  font-style: italic;
+  background-color: black;
+  color: white;
+  width: 100%;
+
+  text-align: center;
 }

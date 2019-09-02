@@ -1,17 +1,21 @@
 <h1> </h1>
 <h1>Profile Page of <%= currentUser.firstname%> <%= currentUser.lastname %></h1>
 <div class="profile-container">
-            <div class='profile-image'>
-            <img src='<%=currentUser.profile%>' alt=" <%currentUser.name %>">
-            <h2 <%= currentUser.firstname%> <%= currentUser.lastname %></h2>
-            <h2>Username: <%=currentUser.username %></h2>
-            <h2>Birthdate: <%= moment.utc(currentUser.birthday).format('MMMM Do YYYY')%> </h2> 
-            <h3>Bio: <%=currentUser.bio %></h3>
-            <a href="/profile/edit">Edit Your Profile Here</a>
-
-            <div>
-                    <h3><strong>Admin?</strong> <%= currentUser.admin ? 'Yes' : 'No' %></h3>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img class="profile-image" class="card-img" alt=" <%=currentUser.name %>" src="<%=currentUser.profile%>">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body" style="">
+                    <h2>Profile Page of <%= currentUser.firstname%> <%= currentUser.lastname %></h2>
+                    <h4>Birthdate: <%= moment.utc(currentUser.birthday).format('MMMM Do YYYY')%> </h4> 
+                    <h4 class="card-title"><%=currentUser.firstname %>'s Bio: </h4>
+                    <p class="card-text"><h5><%=currentUser.bio %></h5></p> <br>
+                    <h5><strong>Admin?</strong> <%= currentUser.admin ? 'Yes' : 'No' %></h5>
+                    <a style="font-size: 20px" href="/profile/edit">Edit Your Profile Here</a>
                 </div>
+            </div>
+        </div>
     </div>
-
 </div>

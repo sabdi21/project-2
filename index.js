@@ -9,7 +9,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helmet = require('helmet');
 const db = require('./models')
-
+const axios = require('axios');
 
 //instantiates the express app
 const app = express()
@@ -64,10 +64,36 @@ app.use('/profile', require('./controllers/profile'))
 app.use('/auth', require('./controllers/auth'))
 app.use('/book', require('./controllers/book'))
 
+
+
 //routes for home and error page
 app.get('/', (req, res) => {
-    res.render('home')
+    const quoteURL = `https://icanhazdadjoke.com/`;
+    axios.get(quoteURL, {
+        method: 'GET',
+        headers: {'Accept': 'application/json'}
+    })
+    .then(response => {
+        console.log(response.data)
+        //let jokeData = response.data
+        // let array = jokeData.map(joke => {
+        //     let jokes = joke.joke
+        //     return {
+        //         jokes
+        //     }
+        // })
+        // console.log('this is the jokes array: ', array)
+        // const jokeOne = response.data.joke[0]
+       console.log('this is the response!:', response.data.joke);
+       res.render('home', {joke: response.data.joke})
+    })
+    
 })
+app.post('/', (req, res) => {
+    res
+})
+
+
 app.get('/*', (req, res) => {
     res.render('404')
 })

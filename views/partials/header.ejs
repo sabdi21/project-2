@@ -1,4 +1,4 @@
-<nav>
+<nav class="navbar navbar-dark bg-dark">
     <ul>
         <% if(currentUser && currentUser.firstname) { %>
             <li>
@@ -12,9 +12,6 @@
     </ul>
     <ul>
         <% if(currentUser) { %>
-        <li>
-            <a href="/profile">Profile</a>            
-        </li>
         <li>
             <a href="/search">Search Books</a>            
         </li>
