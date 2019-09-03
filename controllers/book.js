@@ -63,8 +63,7 @@ router.post("/favorites", (req, res) => {
     console.log("IS THIS COMING THRU?: ", book)
     console.log('this is the favorite selected', req.body)
     const user = req.user.id;
-    const preview_link = req.body.preview
-    console.log("IS THIS COMING THRU?: ", preview_link)
+    const preview_link = req.body.preview_link
     const description = req.body.description.slice(0, 250)
     db.book.findOrCreate({
         where: {
