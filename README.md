@@ -12,9 +12,16 @@ Start the development server with npm start
 Tools Used: JavaScript, Node.js, EJS, CSS, Bootstrap, Sequelize, Postgres, Postico
 
 
-## Navigation
+## Developers Story
+Create an app that allows users to search for books.
+Users must sign-up or login to begin searching or pinning books.
+User authorization is required upon logging in.
+Users should have the ability to edit their profile at any time.
+Users should be able to search by author, title, or genre.
+Displayed book information should include book image, title, author(s), ISBN, summary/description, and a preview-link.
+If some portion of the book information is not available, user should see a placeholder.
+After searching for books, users can pin books to favorites.
+Users can remove books from the favorites page.
+As a bonus, users that dwell on the home page will be entertained with a random joke.
 
-Books are listed under Currently Reading, Want to Read and Read on the home page
-To change a book's status click on the green drop down button on the bottom right of a book cover. Clicking on None removes the book from the list
-To add new books, click on the green plus button at the bottom right of the home page, which will guide you to the search page . Books can be searched by title or author (Available search terms are as mentioned in SEARCH_TERMS.md). Then select the book of your choice by changing its status as explained above.
 
