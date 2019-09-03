@@ -25,6 +25,7 @@ router.post("/result", (req, res) => {
     .then((response) => {
         var bookResult = response.data.items
         console.log('this is the book result:', bookResult)
+
         let bookInfo = bookResult.map(result => {
             const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
             let image_url = result.volumeInfo.imageLinks && result.volumeInfo.imageLinks.thumbnail ? result.volumeInfo.imageLinks.thumbnail : placeholderImage;
@@ -61,9 +62,6 @@ router.post("/result", (req, res) => {
 router.post("/favorites", (req, res) => {
     let book = req.body
     console.log("IS THIS COMING THRU?: ", book)
-    console.log('this is the favorite selected', req.body)
-    const user = req.user.id;
-    const preview_link = req.body.preview_link
     const description = req.body.description.slice(0, 250)
     db.book.findOrCreate({
         where: {
@@ -71,14 +69,12 @@ router.post("/favorites", (req, res) => {
             author: book.author,
             description: description,
             isbn: book.isbn,
-            // preview_link: book.preview_link,
+            preview_link: book.preview_link,
             image_url: book.image_url,
-            userId: user
-                
+            userId: req.user.id
         }
     }).then(() => {
-
-        res.redirect("book/favorites")
+        res.redirect("/book/favorites")
     }).catch(err => {
         console.log("ererererer", err)
     })
