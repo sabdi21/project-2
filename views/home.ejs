@@ -1,13 +1,16 @@
 
 <% if(currentUser && currentUser.firstname) { %>
-<h1>Login or Sign-up to start your book search!</h1>
-<% } else { %>
   <h1>I see you've returned for the jokes! 🥴</h1>
-<% } %>
-
+<% } else { %>
+  <h1>Login or Sign-up to start your book search!</h1>
+  <% } %>
 <div class="card">
     <div class="card-header">
-      <h3>Till then, check out this joke 😌</h3>
+      <% if(currentUser && currentUser.firstname) { %>
+      <h3>Well, let me entertain you some more...</h3>
+      <% } else { %>
+        <h3>Here's a joke for you...</h3>
+      <% } %>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">

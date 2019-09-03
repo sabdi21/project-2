@@ -3,7 +3,8 @@
 <% favorites.forEach(fav => {  %>
 
 <div id="bookDiv" >
-    <form method="POST" action="/book/favorites/<%=fav.id%>/?_method=DELETE">
+    
+    <form class="form" method="POST" action="/book/favorites/<%=fav.id%>/?_method=DELETE">
 
         <span id="image">
             <img src="<%= fav.image_url %>">
@@ -13,7 +14,7 @@
         </span>
         <p style="overflow-y: scroll;" id="description">Book Description: </p>
         <p><%= fav.description %>...</p>
-        <p id="preview-link"><a href="<%=fav.preview_link%>"">Preview Book Here!</a></p>
+        <p id="preview-link"><a href="<%=fav.preview_link%>">Preview Book Here!</a></p>
 
         <button class="btn-warning" type="submit">Remove Book</button>
     </form>

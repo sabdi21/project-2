@@ -6,11 +6,18 @@ html, body {
 }
 .profile-container {
   display: flex;
-  padding: 50px;
-  /* margin-right: 60px; */
+  padding: 20px;
+  padding-left: 200px;
+  text-indent: 29px;
+  
 }
+
 .card-body {
-margin: 20px;
+margin: 30px;
+}
+#profile-card {
+  margin-left: 100px;
+  margin: 30px;
 }
 #title {
   text-align: center;
@@ -55,8 +62,8 @@ nav a:hover {
   margin: 20%;
 }
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 320px;
 }
 img {
   height: 230px;
@@ -80,7 +87,7 @@ span h4 {
   width: fit-content;
 }
 
-form {
+.form {
   display: flex;
   font-size: 18px;
   display: flex;
@@ -92,7 +99,7 @@ form {
   box-shadow: 10px 5px 5px rgb(229, 147, 218);
   border-radius: 25px;
   padding: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 6%;
   background-image: repeating-linear-gradient(to bottom right, rgb(236, 214, 231), rgb(247, 66, 210), rgb(219, 168, 208));
     /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
 }
@@ -146,9 +153,9 @@ h1 {
 }
 footer {
   background-color: rgb(211, 194, 228);
-  font-size: 20px;
+  font-size: 15px;
   color: white;
-  padding: 10px;
+  padding: 8px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -189,4 +196,24 @@ footer {
   width: 100%;
 
   text-align: center;
+}
+label {
+  font-size: 20px;
+  width: 30%;
+  margin-left: 40%;
+  
+}
+/* ===================== */
+/* #searchText {
+  font-size: 40px;
+
+}
+#searchBox:hover {
+  font-size: 30px;
+  background-color:  #ddd;
+} */
+
+label:hover {
+  font-size: 30px;
+  background-color: rgb(236, 164, 224);
 }

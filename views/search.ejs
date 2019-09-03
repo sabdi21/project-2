@@ -1,27 +1,27 @@
 <h1>This is the search page</h1>
 
-
-<form action="/book/result" method="POST">
-  <input type="text" name="search">
-  <fieldset id="title-button"></fieldset>
+  <form class="form" action="/book/result" method="POST">
+    <input type="text" name="search">
+    <fieldset class="search-button" id="title-button"></fieldset>
       <label for="title">
       <span>Title</span>
       <input class="radio" type="radio" name="search" value="title" required>
       </label>
   </fieldset>
 
-  <fieldset id="author-button"></fieldset>
+  <fieldset class="search-button" id="author-button"></fieldset>
     <label for="author">
     <span>Author</span>
     <input class="radio" type="radio" name="search" value="author" required>
     </label>
   </fieldset>
 
-  <fieldset id="genre-button"></fieldset>
+  <fieldset class="search-button" id="genre-button"></fieldset>
     <label for="author">
     <span>Genre</span>
     <input class="radio" type="radio" name="search" value="genre" required>
     </label>
   </fieldset>
-  <button type="submit">Search the Google Books API</button>
+  <button type="submit" class="btn btn-primary">Search Books</button>
 </form>
+

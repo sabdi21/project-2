@@ -15,7 +15,7 @@ router.post("/result", (req, res) => {
     let result = req.body.search[0]
     let searchType = req.body.search[1] 
     let url ;
-
+    console.log("This is the preview link:", result)
     if (searchType === 'title') { url = `${baseUrl}+intitle:${result}&key=${apiKey }`; }
     if (searchType === 'author') { url = `${baseUrl}+inauthor:${result}&key=${apiKey}`; }
     if (searchType === 'genre') { url = `${baseUrl}+subject:${result}&key=${apiKey}`; }
@@ -24,13 +24,14 @@ router.post("/result", (req, res) => {
     axios.get(url)
     .then((response) => {
         var bookResult = response.data.items
+        console.log('this is the book result:', bookResult)
         let bookInfo = bookResult.map(result => {
             const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
             let image_url = result.volumeInfo.imageLinks && result.volumeInfo.imageLinks.thumbnail ? result.volumeInfo.imageLinks.thumbnail : placeholderImage;
             let title = result.volumeInfo.title;
             let author = result.volumeInfo.authors || 'Author(s) not available';
             let description = result.volumeInfo.description || 'Summary not available';
-            let preview = result.accessInfo.webReaderLink || 'not available';
+            let preview_link = result.accessInfo.webReaderLink || 'not available';
             let isbnArray = result.volumeInfo.industryIdentifiers;
             let isbn;
 
@@ -40,14 +41,17 @@ router.post("/result", (req, res) => {
                 isbn = 'not available'
             }
             return {
+                
                 title,
                 author,
                 description,
                 image_url,
-                preview,
+                preview_link,
                 isbn
             }  
+            
         })
+        // console.log('this is the preview link:', preview_link)
         res.render("book/result", { bookInfo })
     })
 })
@@ -56,7 +60,11 @@ router.post("/result", (req, res) => {
 // send the favorites to new route
 router.post("/favorites", (req, res) => {
     let book = req.body
+    console.log("IS THIS COMING THRU?: ", book)
+    console.log('this is the favorite selected', req.body)
     const user = req.user.id;
+    const preview_link = req.body.preview
+    console.log("IS THIS COMING THRU?: ", preview_link)
     const description = req.body.description.slice(0, 250)
     db.book.findOrCreate({
         where: {
@@ -64,13 +72,14 @@ router.post("/favorites", (req, res) => {
             author: book.author,
             description: description,
             isbn: book.isbn,
-            preview_link: book.preview,
+            // preview_link: preview_link,
             image_url: book.image_url,
             userId: user
                 
         }
     }).then(() => {
-        res.redirect("/book/favorites")
+
+        res.redirect("book/favorites")
     }).catch(err => {
         console.log("ererererer", err)
     })
