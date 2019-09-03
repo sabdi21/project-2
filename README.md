@@ -25,5 +25,7 @@ If some portion of the book information is not available, user should see a plac
 After searching for books, users can pin books to favorites.
 Users can remove books from the favorites page.
 As a bonus, users that dwell on the home page will be entertained with a random joke.
+Users and pinned books are saved to database.
+User profile edits as well as edits to the favorite page are automatically reflected in the database.
 
 
