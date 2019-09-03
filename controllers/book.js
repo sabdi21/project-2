@@ -71,7 +71,7 @@ router.post("/favorites", (req, res) => {
             author: book.author,
             description: description,
             isbn: book.isbn,
-            // preview_link: preview_link,
+            // preview_link: book.preview_link,
             image_url: book.image_url,
             userId: user
                 
