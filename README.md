@@ -9,7 +9,9 @@ Ensure you have installed Node.js and npm on your system else run npm install no
 Install all project dependencies with npm install
 Start the development server with npm start
 
-Tools Used: JavaScript, Node.js, EJS, CSS, Bootstrap, Sequelize, Postgres, Postico
+Tools Used: JavaScript, Node.js, EJS, CSS, Bootstrap, Sequelize, Postgres, Postico, Trello
+
+Link to Trello Board: https://trello.com/b/ypp1Od7h
 
 
 ## Developers Story
