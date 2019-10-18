@@ -1,15 +1,18 @@
-# project-2
-BookLand
-# To run on system
+# BookLand
 Sign-up or log-in to start searching for books. Feel free to return to the homepage to edit your profile. You can search for books by author, title, or genre. Once books are listed, save the books you like by clicking the 'Pin-it' button. Your pinned books are saved in favorites.
-
 
 ## Clone repository locally
 Ensure you have installed Node.js and npm on your system else run npm install node 
 Install all project dependencies with npm install
 Start the development server with npm start
 
-Tools Used: JavaScript, Node.js, EJS, CSS, Bootstrap, Sequelize, Postgres, Postico, Trello
+## Tools Used: 
+- JavaScript
+- Node.js
+- EJS/CSS 
+- Bootstrap 
+- Sequel Databases
+- Postgres, Postico, and Trello Board
 
 Link to Trello Board: https://trello.com/b/ypp1Od7h
 
